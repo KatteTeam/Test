@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.tu{
+				width:1000px;
+				margin:100px auto;
+				position: relative;
+			}
+			.tu p{
+				width:10px;
+				height:10px;
+				background:#ECECFB;
+				position: absolute;
+				border-radius:100%;
+				display: inline-block;
+				animation:loading 2s infinite;
+			}
+			.tu p:nth-child(1){
+				top:-20px;
+				left:20px;
+				animation-delay:0.2s;
+			}
+			.tu p:nth-child(2){
+				top:-10px;
+				left:0px;
+				animation-delay:0.4s;
+			}
+			.tu p:nth-child(3){
+				top:10px;
+				left:-10px;
+				animation-delay:0.6s;
+			}
+			.tu p:nth-child(4){
+				top:30px;
+				left:-10px;
+				animation-delay:0.8s;
+			}
+			.tu p:nth-child(5){
+				top:50px;
+				left:0px;
+				animation-delay:1s;
+			}
+			.tu p:nth-child(6){
+				top:60px;
+				left:20px;
+				animation-delay:1.2s;
+			}
+			.tu p:nth-child(7){
+				top:50px;
+				left:40px;
+				animation-delay:1.4s;	
+			}
+			.tu p:nth-child(8){	
+				top:30px;
+				left:50px;
+				animation-delay:1.6s;				
+			}
+			.tu p:nth-child(9){
+				top:10px;
+				left:50px;
+				animation-delay:1.8s;
+			}
+			.tu p:nth-child(10){
+				top:-10px;
+				left:40px;
+				animation-delay:2s;
+			}
+			@keyframes loading{
+				0%{
+					background:#ECECFB;
+				}
+				50%{
+					transform: scale(1.4);
+					background: black;
+				}
+				100%{
+					background: #ECECFB;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tu">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

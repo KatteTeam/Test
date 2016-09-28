@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.tu{
+				width:1000px;
+				margin:100px auto;
+			}
+			.tu p{
+				display: inline-block;
+				width:10px;
+				height:10px;
+				background:#ECECFB;
+				border-radius:100%;
+				animation: loading 1s infinite;
+			}
+			.tu p:nth-child(1){
+				animation-delay:0.2s;
+			}
+			.tu p:nth-child(2){
+				animation-delay:0.4s;
+			}
+			.tu p:nth-child(3){
+				animation-delay:0.6s;
+			}
+			.tu p:nth-child(4){
+				animation-delay:0.8s;
+			}
+			.tu p:nth-child(5){
+				animation-delay:1s;
+			}
+			.tu p:nth-child(6){
+				animation-delay:1.2s;
+			}
+			@keyframes loading{
+				0%{
+					background:#ECECFB;
+				}
+				50%{
+					transform: scale(1.4);
+					background:black;
+				}
+				100%{
+					background:#ECECFB;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tu">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>
