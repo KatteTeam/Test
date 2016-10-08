@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="火币小乔带你换个姿势看世界">
+	<meta name="keywords" content="火币">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Set render engine for 360 browser -->
+	<meta name="renderer" content="webkit">
+
+	<!-- No Baidu Siteapp-->
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+	<link rel="icon"  href="favicon.ico">
+
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="" />
+
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileColor" content="#0e90d2">
+
+	<!-- <link rel="stylesheet" href="./css/amazeui.css"> -->
+	<link rel="stylesheet" href="./css/main.css">
+	<!-- <link rel="stylesheet" href="./css/amazeui.videojs.css"/> -->
+	<title>小乔</title>
+</head>
+<script src="./js/jquery.min.js"></script>
+<script>
+	function checkPlatform(){
+	    if (/MicroMessenger/i.test(navigator.userAgent)) {
+	        return true;
+	    }
+	}
+  $(document).ready(function(){
+    var ret = checkPlatform();
+    if (!ret) {
+        $('.wrap').css('paddingTop','40px');
+        $('#non-weixin').removeClass('disp-n');
+    }
+  });
+</script>
+
+<body class="M-dialogue">
+	<header id="non-weixin" data-am-widget="header" class="fixed-header disp-n">
+		<h3>
+			小乔
+		</h3>
+	</header>
+	<div class="wrap">
+		<div class="container js-container">
+			
+			<div class="dialogue-box">
+				
+			</div>
+			<!-- <footer class="ui-animate-delay ui-animate-moveT js-footer">
+				
+			</footer>	 -->
+		</div>
+<!-- 		<div class="full-box">
+			<div class="img-full ">
+				<img src="./img/img1.jpg" alt="poster">
+			</div>
+		</div> -->
+		<!-- <div class="full-box">
+			<div class="video-full">
+				<video src="./video/OMG.mp4" controls></video>
+			</div>
+		</div> -->
+	</div>
+</body>
+<!-- <script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script> -->
+
+<script src="./js/touch-0.2.14.min.js"></script>
+<script src="./js/main.js"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  wx.config({
+    debug: false,
+    appId: 'wxb521908783964bdc',
+    timestamp: '',
+    nonceStr: '',
+    signature: '',
+    jsApiList: [
+      'onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ'
+    ]
+  });
+</script>
+<script>
+var share_title = "小乔带你换个姿势看世界"; //标题
+var share_img = "./img/pc.jpg"; //图片
+var share_desc = "戳进来与美女小乔私聊"; //简介
+var share_link = ""; //链接
+wx.ready(function () {
+  //分享到朋友圈
+  wx.onMenuShareTimeline({
+    title: share_title, 
+    link: share_link, 
+    imgUrl: share_img, 
+    success: function () { },
+    cancel: function () { }
+  });
+  //分享给朋友
+  wx.onMenuShareAppMessage({
+    title: share_title, 
+    desc: share_desc, 
+    link: share_link, 
+    imgUrl: share_img, 
+    type: '', 
+    dataUrl: '', 
+    success: function () {},
+    cancel: function () {}
+  });
+  //分享到QQ
+  wx.onMenuShareQQ({
+    title: share_title, // 分享标题
+    desc: share_desc, // 分享描述
+    link: share_link, // 分享链接
+    imgUrl: share_img, // 分享图标
+    success: function () { },
+    cancel: function () { }
+  });
+});
+
+wx.error(function(res){
+    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+});
+
+wx.checkJsApi({
+    jsApiList: ['onMenuShareAppMessage','onMenuShareQQ','onMenuShareTimeline'], // 需要检测的JS接口列表，所有JS接口列表见附录2,
+    success: function(res) {
+        // 以键值对的形式返回，可用的api值true，不可用为false
+        // 如：{"checkResult":{"chooseImage":true},"errMsg":"checkJsApi:ok"}
+    }
+});
+</script>
+
+</html>
